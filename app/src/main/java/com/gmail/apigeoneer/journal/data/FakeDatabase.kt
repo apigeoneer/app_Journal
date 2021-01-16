@@ -3,7 +3,7 @@ package com.gmail.apigeoneer.journal.data
 class FakeDatabase private constructor() {
 
     // Fake database, remember db is nothing but a holder for all the DAOs
-    var quoteDao = FakeEntryDao()
+    var entryDao = FakeEntryDao()
         private set
 
     // We get instances of fake database through companion obj

@@ -1,6 +1,14 @@
 package com.gmail.apigeoneer.journal.ui
 
-class EntryViewModel {
+import androidx.lifecycle.ViewModel
+import com.gmail.apigeoneer.journal.data.Entry
+import com.gmail.apigeoneer.journal.data.EntryRepository
 
-    
+class EntryViewModel(private val entryRepository: EntryRepository)
+    :ViewModel() {
+
+    fun getEntries() = entryRepository.getEntries()
+
+    fun addEntry(entry: Entry) = entryRepository.addEntry(entry)
+
 }

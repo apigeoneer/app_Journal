@@ -10,5 +10,4 @@ class EntryViewModel(private val entryRepository: EntryRepository)
     fun getEntries() = entryRepository.getEntries()
 
     fun addEntry(entry: Entry) = entryRepository.addEntry(entry)
-
 }

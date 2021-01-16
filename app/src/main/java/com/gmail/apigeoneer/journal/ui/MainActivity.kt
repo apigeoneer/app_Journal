@@ -6,6 +6,7 @@ import android.widget.EditText
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
 import com.gmail.apigeoneer.journal.R
 import com.gmail.apigeoneer.journal.data.Entry
@@ -33,8 +34,10 @@ class MainActivity : AppCompatActivity() {
 
     private fun initializeUi() {
         val factory = InjectorUtils.provideEntriesViewModelFactory()
-        val viewModel = ViewModelProviders.of(this, factory)
-                .get(EntriesViewModel::class.java)
+//        val viewModel = ViewModelProviders.of(this, factory)
+//                .get(EntriesViewModel::class.java)
+        // ViewModelProviders class is now deprecated
+        val viewModel = ViewModelProvider(this).get(EntriesViewModel::class.java)
 
         viewModel.getEntries().observe(this, Observer { entries ->
             val stringBuilder = StringBuilder()

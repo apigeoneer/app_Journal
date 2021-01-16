@@ -12,13 +12,13 @@ class FakeDatabase private constructor() {
 
     // Singleton instantiation
     companion object {
-        @Volatile private var instance: FakeDatabase? = null
+        @Volatile private var _instance: FakeDatabase? = null
 
         fun getInstance() =
                 // to stop 2 threads from executing at the same time
-                instance ?: synchronized(lock = this) {
+                _instance ?: synchronized(this) {
                     // Check if instance is not instantiated already
-                    instance ?: FakeDatabase().also { instance = it }
+                    _instance ?: FakeDatabase().also { _instance = it }
                 }
     }
 

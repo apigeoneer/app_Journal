@@ -1,4 +1,4 @@
-package com.gmail.apigeoneer.journal.Data
+package com.gmail.apigeoneer.journal.data
 
 data class Entry(val entryText: String,
                  val date: String) {
